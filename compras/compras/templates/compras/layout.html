@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lista de la Compra{% endblock %}</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tu propio CSS -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Mi Lista de la Compra</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'lista_compra:lista_compra' %}">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'usuarios:lista' %}">Usuarios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'establecimientos:lista' %}">Establecimientos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        {% block content %}
+        <!-- El contenido específico de cada página se mostrará aquí -->
+        {% endblock %}
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle (con Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tu propio JS -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

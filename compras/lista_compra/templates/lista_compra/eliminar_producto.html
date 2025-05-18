@@ -1,0 +1,20 @@
+{% extends "compras/layout.html" %}
+{% load static %}
+{% block content %}
+  <h2>¿Estás seguro de eliminar este producto?</h2>
+<div class="alert alert-warning">
+    <strong>Producto:</strong> {{ object.producto }}<br>
+    {% if object.establecimiento %}
+      <strong>Establecimiento:</strong> {{ object.establecimiento }}<br>
+    {% endif %}
+    {% if object.precio %}
+      <strong>Precio:</strong> {{ object.precio }}
+    {% endif %}
+    
+  </div>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'lista_compra:lista_compra' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock %}

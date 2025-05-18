@@ -1,0 +1,16 @@
+{% extends 'compras/layout.html' %}
+{% load static %}
+{% block title %}Eliminar Establecimiento{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>¿Estás seguro de que deseas eliminar este establecimiento?</h2>
+    <p><strong>{{ object.nombre }}</strong> ({{ object.direccion }})</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        <a href="{% url 'establecimientos:lista' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

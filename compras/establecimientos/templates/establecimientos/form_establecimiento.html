@@ -1,0 +1,16 @@
+{% extends 'compras/layout.html' %}
+{% load static %}
+{% block title %}Formulario de Establecimiento{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">{{ form.instance.pk|yesno:"Editar Establecimiento,Nuevo Establecimiento" }}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'establecimientos:lista' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

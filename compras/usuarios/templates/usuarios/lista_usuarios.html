@@ -1,0 +1,36 @@
+{% extends 'compras/layout.html' %}
+{% load static %}
+{% block title %}Lista de Usuarios{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Usuarios Registrados</h2>
+    <a href="{% url 'usuarios:agregar' %}" class="btn btn-primary mb-3">Agregar Usuario</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.usuario }}</td>
+                <td>{{ usuario.status }}</td>
+                <td>
+                    <a href="{% url 'usuarios:editar' usuario.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'usuarios:eliminar' usuario.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No hay usuarios registrados.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

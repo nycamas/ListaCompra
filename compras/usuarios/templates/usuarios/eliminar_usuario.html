@@ -1,0 +1,15 @@
+{% extends 'compras/layout.html' %}
+{% load static %}
+{% block title %}Eliminar Usuario{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">¿Estás seguro que deseas eliminar al usuario <strong>{{ object.usuario }}</strong>?</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        <a href="{% url 'usuarios:lista' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
