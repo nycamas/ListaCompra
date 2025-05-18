@@ -1,2 +1,4 @@
 # ListaCompra
 Practica fin de curso
+estoy tratando de hacer una app para controlar las compras propias de una entidad, ya sea un hogar, una asociación, o un club. 
+se pueden dar de alta tantos usuarios como se requiera, y segun el perfil se dedicaran a comprar (aplicacion pendiente de hacer) el perfil es el de comprador, que se dedicará a tildar los articulos que compre en ese momento se registrará la fecha de compra. despues de un tiempo de uso se podra hacer una predicción fiable de cada cuanto tiempo se compra , el perfil técnico se encargaría de rellenar la base de datos de establecimientos y productos para usar en las listas de compras, y el perfil de administrador se podria encargar de todo lo anterior y ademas se encargaría de los perfiles de los usuarios, y de las estadisticas y predicciones
